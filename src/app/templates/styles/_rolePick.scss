@@ -1,0 +1,9 @@
+@import 'mixins';
+@import 'rolePickMaximized';
+@import 'rolePickMinimized';
+
+.role-card {
+	@include box-sizing();
+	background-color: white;
+	overflow: hidden;
+}
