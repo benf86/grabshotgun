@@ -11,9 +11,15 @@
 	margin: 0 auto;
 }
 
-@media screen and (min-width: 500px){
+.role-card-maximized {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 45%;
+}
+
+
+@media screen and (min-width: 600px){
 	.role-choice-maximized {
-		@include vertical-align();
 		flex-direction: row;
 		flex-wrap: no-wrap;
 		width: 100vw;
@@ -21,21 +27,7 @@
 	}
 }
 
-@media screen and (max-width: 499px){
-	.role-choice-maximized {
-		@include box-sizing();
-		flex-direction: column;
-		flex-wrap: wrap;
-	}	
-}
-
-.role-card-maximized {
-	display: flex;
-	flex-direction: column;
-	flex-basis: 45%;
-}
-
-@media screen and (min-width: 500px){
+@media screen and (min-width: 600px){
 	.role-card-maximized {
 		@include vertical-align();
 		margin: 0 20px;
@@ -44,7 +36,17 @@
 	}
 }
 
-@media screen and (max-width: 499px){
+
+
+@media screen and (max-width: 599px){
+	.role-choice-maximized {
+		@include box-sizing();
+		flex-direction: column;
+		flex-wrap: wrap;
+	}	
+}
+
+@media screen and (max-width: 599px){
 	.role-card-maximized {
 		position: relative;
 		top: 0px;
@@ -75,7 +77,7 @@
 
 .shotgun-photo-maximized {
 	@extend .role-photo-maximized;
-	background-image: url(../images/shotgun.jpg);
+	background-image: url(../../../static/images/shotgun.jpg);
 }
 
 .shotgun-text-maximized {
@@ -89,7 +91,7 @@
 
 .driver-photo-maximized {
 	@extend .role-photo-maximized;
-	background-image: url(../images/driver.jpg);
+	background-image: url(../../../static/images/driver.jpg);
 }
 
 .driver-text-maximized {

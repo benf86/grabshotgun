@@ -2,15 +2,19 @@
   "name": "grabshotgun-front",
   "version": "0.0.1",
   "scripts": {
-    "start": "npm run build:link && concurrently \"npm run scss:w\" \"npm run tsc:w\" \"npm run lite\" \"npm run copyStatic\"",
+    "start": "npm run build:link && concurrently \"npm run scss:w\" \"npm run tsc:w\" \"npm run watch:html\" \"npm run watch:index.html\" \"npm run watch:static\" \"npm run lite\"",
+    
     "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "scss:w": "sass --watch ./src/app/templates/styles:./build/app/templates/styles/",
-    "copyStatic": "cp -vfR ./src/app/static ./build/static && cp -vfR ./src/index.html ./build/index.html",
     "lite": "lite-server -c ./bs-config.json",
-    "build:link": "mkdir -p ./build &&  ln -s ../node_modules build/node_modules",
     "typings": "typings",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+
+    "build:link": "mkdir -p ./build &&  ln -nsf ../node_modules build/node_modules",
+    "watch:html": "mkdir -p ./build/app/templates/html && cd ./src/app/templates/html && watch 'cp * ../../../../build/app/templates/html/'",
+    "watch:index.html": "mkdir -p ./build/ && cd ./src && watch 'cp *.html ../build/'",
+    "watch:static": "mkdir -p ./build/static && cd ./src/static && watch 'cp -R * ../../build/static/'",
+    "tsc:w": "tsc -w",
+    "scss:w": "sass --watch ./src/app/templates/styles:./build/app/templates/styles/"
   },
   "license": "ISC",
   "dependencies": {
@@ -25,6 +29,7 @@
     "concurrently": "^2.0.0",
     "lite-server": "^2.1.0",
     "typescript": "^1.8.9",
-    "typings":"^0.7.11"
+    "typings": "^0.7.11",
+    "watch": "^0.17.1"
   }
 }

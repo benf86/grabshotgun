@@ -10,10 +10,10 @@
 	box-shadow: $horizontal $vertical $blur $spread rgba(0,0,0,$alpha);
 }
 
-@mixin vertical-align() {
+@mixin vertical-align($percent: 50%) {
   position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  top: $percent;
+  -webkit-transform: translateY($percent * -1);
+  -ms-transform: translateY($percent * -1);
+  transform: translateY($percent * -1);
 }
