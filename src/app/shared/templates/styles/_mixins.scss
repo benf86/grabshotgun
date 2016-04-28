@@ -10,10 +10,26 @@
 	box-shadow: $horizontal $vertical $blur $spread rgba(0,0,0,$alpha);
 }
 
-@mixin vertical-align($percent: 50%) {
-  position: relative;
-  top: $percent;
-  -webkit-transform: translateY($percent * -1);
-  -ms-transform: translateY($percent * -1);
-  transform: translateY($percent * -1);
+@mixin vertical-align($percent: 50%, $position: relative) {
+	position: $position;
+	top: $percent;
+	-webkit-transform: translateY($percent * -1);
+	-ms-transform: translateY($percent * -1);
+	transform: translateY($percent * -1);
+}
+
+@mixin transform-translate($x, $y) {
+	-webkit-transform: translateY($x, $y);
+	-ms-transform: translateY($x, $y);
+	transform: translateY($x, $y);
+}
+
+@mixin transition($propertyList, $duration: 2s, $timingFunction: ease-in-out, $delay: 0s) {
+	$properties: '';
+	@each $property in $propertyList {
+		$property: $property + ' ' + $duration + ' ' + $timingFunction + ' ' + $delay;
+		@if $properties != '' { $properties: $properties + ', ' };
+		$properties: $properties + $property;
+	}
+	transition: unquote($properties);
 }

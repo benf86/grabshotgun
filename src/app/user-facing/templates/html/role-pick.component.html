@@ -1,10 +1,10 @@
 <div id="role-choice" class="role-choice-maximized">
-	<div id="driver" class="role-card driver-maximized">
-		<div id="driver-text" class="driver-text-maximized">Want some company?</div>
-		<div id="driver-photo" class="driver-photo-maximized"></div>
+	<div id="driver" (click)="toggleMaximized('driver')" class="role-card driver-{{driver.cardState}}">
+		<div id="driver-text" class="driver-text-{{driver.cardState}}">Want some company?</div>
+		<div id="driver-photo" class="driver-photo-{{driver.cardState}}"></div>
 	</div>
-	<div id="shotgun" class="role-card shotgun-maximized">
-		<div id="shotgun-text" class="shotgun-text-maximized">Ride shotgun</div>
-		<div id="shotgun-photo" class="shotgun-photo-maximized"></div>
+	<div id="shotgun" (click)="toggleMaximized('shotgun')" class="role-card shotgun-{{shotgun.cardState}}">
+		<div id="shotgun-text" class="shotgun-text-{{shotgun.cardState}}">Ride shotgun</div>
+		<div id="shotgun-photo" class="shotgun-photo-{{shotgun.cardState}}"></div>
 	</div>
 </div>

@@ -6,4 +6,18 @@
 	@include box-sizing();
 	background-color: white;
 	overflow: hidden;
+	@include transition(
+		(
+			top, 
+			transform, 
+			width, 
+			height,
+			max-width,
+			max-height,
+			box-shadow,
+			-webkit-box-shadow,
+			-moz-box-shadow,
+			display
+		)
+	);
 }
