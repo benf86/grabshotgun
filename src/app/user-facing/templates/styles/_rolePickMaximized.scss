@@ -1,5 +1,5 @@
-@import 'mixins';
-
+@import '../../../shared/templates/styles/mixins';
+@import '../../../shared/templates/styles/globalVariables';
 
 .role-choice-maximized {
 	@include box-sizing();
@@ -77,7 +77,7 @@
 
 .shotgun-photo-maximized {
 	@extend .role-photo-maximized;
-	background-image: url(../../../static/images/shotgun.jpg);
+	background-image: url($imageDir + shotgun + $imageExt);
 }
 
 .shotgun-text-maximized {
@@ -91,7 +91,7 @@
 
 .driver-photo-maximized {
 	@extend .role-photo-maximized;
-	background-image: url(../../../static/images/driver.jpg);
+	background-image: url($imageDir + driver + $imageExt);
 }
 
 .driver-text-maximized {

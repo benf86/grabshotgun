@@ -1,4 +1,4 @@
-import { RolePick } from '../../components/role-pick.component';
+import { RolePick } from '../../../user-facing/components/role-pick.component';
 
 
 export var routes = [

@@ -10,11 +10,11 @@
     "postinstall": "typings install",
 
     "build:link": "mkdir -p ./build &&  ln -nsf ../node_modules build/node_modules",
-    "watch:html": "mkdir -p ./build/app/templates/html && cd ./src/app/templates/html && watch 'cp * ../../../../build/app/templates/html/'",
+    "watch:html": "mkdir -p ./build/app/shared/templates/html && mkdir -p ./build/app/user-facing/templates/html && cd ./src/app/shared/templates/html && watch 'cp * ../../../../../build/app/shared/templates/html/' && cd ./src/app/user-facing/templates/html && watch 'cp * ../../../../../build/app/user-facing/templates/html/'",
     "watch:index.html": "mkdir -p ./build/ && cd ./src && watch 'cp *.html ../build/'",
     "watch:static": "mkdir -p ./build/static && cd ./src/static && watch 'cp -R * ../../build/static/'",
     "tsc:w": "tsc -w",
-    "scss:w": "sass --watch ./src/app/templates/styles:./build/app/templates/styles/"
+    "scss:w": "sass --watch ./src/app/shared/templates/styles:./build/app/shared/templates/styles/ ./src/app/user-facing/templates/styles:./build/app/user-facing/templates/styles"
   },
   "license": "ISC",
   "dependencies": {
