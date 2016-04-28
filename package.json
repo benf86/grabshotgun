@@ -2,7 +2,7 @@
   "name": "grabshotgun-front",
   "version": "0.0.1",
   "scripts": {
-    "start": "npm run build:link && concurrently \"npm run scss:w\" \"npm run tsc:w\" \"npm run watch:html\" \"npm run watch:index.html\" \"npm run watch:static\" \"npm run lite\"",
+    "start": "npm run build:link && npm run build:htmlDirs && concurrently \"npm run scss:w\" \"npm run tsc:w\" \"npm run watch:index.html\" \"npm run watch:static\" \"npm run lite\" \"npm run watch:templates:shared\" \"npm run watch:templates:user-facing\"",
     
     "tsc": "tsc",
     "lite": "lite-server -c ./bs-config.json",
@@ -10,9 +10,11 @@
     "postinstall": "typings install",
 
     "build:link": "mkdir -p ./build &&  ln -nsf ../node_modules build/node_modules",
-    "watch:html": "mkdir -p ./build/app/shared/templates/html && mkdir -p ./build/app/user-facing/templates/html && cd ./src/app/shared/templates/html && watch 'cp * ../../../../../build/app/shared/templates/html/' && cd ./src/app/user-facing/templates/html && watch 'cp * ../../../../../build/app/user-facing/templates/html/'",
+    "build:htmlDirs": "mkdir -p ./build/app/shared/templates/html && mkdir -p ./build/app/user-facing/templates/html",
     "watch:index.html": "mkdir -p ./build/ && cd ./src && watch 'cp *.html ../build/'",
     "watch:static": "mkdir -p ./build/static && cd ./src/static && watch 'cp -R * ../../build/static/'",
+    "watch:templates:shared": "cd ./src/app/shared/templates/html/ && watch 'cp * ../../../../../build/app/shared/templates/html/'",
+    "watch:templates:user-facing": "cd ./src/app/user-facing/templates/html/ && watch 'cp * ../../../../../build/app/user-facing/templates/html/'",
     "tsc:w": "tsc -w",
     "scss:w": "sass --watch ./src/app/shared/templates/styles:./build/app/shared/templates/styles/ ./src/app/user-facing/templates/styles:./build/app/user-facing/templates/styles"
   },
