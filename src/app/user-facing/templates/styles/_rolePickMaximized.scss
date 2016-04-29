@@ -12,10 +12,59 @@
 }
 
 .role-card-maximized {
-	display: flex;
-	flex-direction: column;
+	@extend .role-card;
 	flex-basis: 50%;
-	@include box-shadow(0px, 5px, 10px, 5px, 0.6);
+	@include transition-custom(
+		(
+			top 100ms ease-in-out,
+			bottom 100ms ease-in-out,
+			margin 100ms ease-in-out,
+			left 100ms ease-in-out,
+			right 100ms ease-in-out,
+			height 500ms ease-in-out,
+			width 500ms ease-in-out,
+			max-height 500ms ease-in-out,
+			max-width 500ms ease-in-out,
+			min-height 500ms ease-in-out,
+			min-width 500ms ease-in-out,
+			transform 100ms ease-in-out, 
+			box-shadow 100ms ease-in-out,
+			-webkit-box-shadow 100ms ease-in-out,
+			-moz-box-shadow 100ms ease-in-out,
+			z-index 100ms step-end
+		)
+	);
+}
+
+.role-card-maximized:hover {
+	@include box-shadow(12px, 12px, 25px, 10px, 0.8);
+	@include transform-custom(
+    	(
+			scale(1.10),
+			translateY(-45%)
+    	)
+    );
+    z-index: 10;
+    @include transition-custom(
+		(
+			top 100ms ease-in-out,
+			bottom 100ms ease-in-out,
+			margin 100ms ease-in-out,
+			left 100ms ease-in-out,
+			right 100ms ease-in-out,
+			height 500ms ease-in-out,
+			width 500ms ease-in-out,
+			max-height 500ms ease-in-out,
+			max-width 500ms ease-in-out,
+			min-height 500ms ease-in-out,
+			min-width 500ms ease-in-out,
+			transform 100ms ease-in-out, 
+			box-shadow 100ms ease-in-out,
+			-webkit-box-shadow 100ms ease-in-out,
+			-moz-box-shadow 100ms ease-in-out,
+			z-index 100ms step-start
+		)
+	);
 }
 
 
@@ -23,7 +72,7 @@
 	.role-choice-maximized {
 		flex-direction: row;
 		flex-wrap: no-wrap;
-		width: 100vw;
+		width: 80vw;
 		height: 100vh;
 	}
 }
@@ -31,9 +80,8 @@
 @media screen and (min-width: 600px){
 	.role-card-maximized {
 		@include vertical-align(50%, relative);
-		margin: 0 20px;
 		max-height: 20em;
-		max-width: 20em;
+		width: 50%;
 	}
 }
 
@@ -59,20 +107,24 @@
 }
 
 .role-photo-maximized {
-	height: 70%;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+	@extend .role-photo;
+	width: 100%;
+	opacity: 1;
+	flex-basis: 70%;
 }
 
 .role-text-maximized {
-	font: 2em normal, sans-serif;
-	text-align: center;
-	height: 30%;
+	@extend .role-text;
 }
 
 .shotgun-maximized {
 	@extend .role-card-maximized;
+	@include box-shadow(10px, 10px, 5px, 0px, 0.8);
+	right: 0;
+}
+
+.shotgun-maximized:hover {
+	right: 20px;
 }
 
 .shotgun-photo-maximized {
@@ -86,8 +138,13 @@
 
 .driver-maximized {
 	@extend .role-card-maximized;
+	@include box-shadow(12px, 10px, 5px, 0px, 0.8);
+	left: 0;
 }
 
+.driver-maximized:hover {
+	left: 20px;
+}
 .driver-photo-maximized {
 	@extend .role-photo-maximized;
 	background-image: url($imageDir + driver + $imageExt);

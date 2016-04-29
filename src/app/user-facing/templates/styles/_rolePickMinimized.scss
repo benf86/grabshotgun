@@ -12,9 +12,9 @@
 }
 
 .role-card-minimized {
-	display: flex;
-	flex-direction: column;
+	@extend .role-card;
 	flex-basis: 50%;
+	width: 50%;
 	@include box-shadow(0px, 0px, 0px, 0px, 0);
 }
 
@@ -30,14 +30,12 @@
 
 @media screen and (min-width: 600px){
 	.role-card-minimized {
-		@include vertical-align(0%, relative);
-		margin: 0 0px;
-		left: 0;
-		top: 0;
-		max-height: 20em;
-		max-width: 20em;
+		position: relative;
+	    top: 0;
+	    transform: translateY(0%);
+		max-height: 2.75em;
 	    height: 2.75em;
-    	width: 50%;
+	    width: 50%;
 	}
 }
 
@@ -63,17 +61,14 @@
 }
 
 .role-photo-minimized {
-	height: 70%;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	display: none;
+	@extend .role-photo;
+	width: 0%;
+	flex-basis: 0%;
+	opacity: 0;
 }
 
 .role-text-minimized {
-	font: 2em normal, sans-serif;
-	text-align: center;
-	height: 30%;
+	@extend .role-text;
 }
 
 .shotgun-minimized {

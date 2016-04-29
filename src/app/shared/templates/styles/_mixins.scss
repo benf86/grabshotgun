@@ -10,18 +10,33 @@
 	box-shadow: $horizontal $vertical $blur $spread rgba(0,0,0,$alpha);
 }
 
-@mixin vertical-align($percent: 50%, $position: relative) {
+@mixin vertical-align($top: 50%, $position: relative, $tY: $top * -1) {
 	position: $position;
-	top: $percent;
-	-webkit-transform: translateY($percent * -1);
-	-ms-transform: translateY($percent * -1);
-	transform: translateY($percent * -1);
+	top: $top;
+	$translateY: $top * -1;
+	@if $tY != false {
+		$translateY: $tY
+	}
+	-webkit-transform: translateY($translateY);
+	-ms-transform: translateY($translateY);
+	transform: translateY($translateY);
 }
 
 @mixin transform-translate($x, $y) {
 	-webkit-transform: translateY($x, $y);
 	-ms-transform: translateY($x, $y);
 	transform: translateY($x, $y);
+}
+
+@mixin transform-custom($transformList) {
+	$transforms: '';
+	@each $transform in $transformList {
+		@if $transforms != '' { $transforms: $transforms + ' '};
+		$transforms: $transforms + $transform;
+	}
+	-moz-transform: unquote($transforms);
+	-webkit-transform: unquote($transforms);
+	transform: unquote($transforms);
 }
 
 @mixin transition($propertyList, $duration: 2s, $timingFunction: ease-in-out, $delay: 0s) {
@@ -31,5 +46,18 @@
 		@if $properties != '' { $properties: $properties + ', ' };
 		$properties: $properties + $property;
 	}
+	-moz-transition: unquote($properties);
+	-webkit-transition: unquote($properties);
 	transition: unquote($properties);
+}
+
+@mixin transition-custom($transitionList) {
+	$transitions: '';
+	@each $transition in $transitionList {
+		@if $transitions != '' { $transitions: $transitions + ', '};
+		$transitions: $transitions + $transition;
+	}
+	-moz-transition: unquote($transitions);
+	-webkit-transition: unquote($transitions);
+	transition: unquote($transitions);
 }
