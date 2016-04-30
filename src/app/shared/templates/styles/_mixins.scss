@@ -4,6 +4,12 @@
 	box-sizing: border-box;
 }
 
+@mixin transform-origin($origin) {
+	-webkit-transform-origin: $origin;
+	-moz-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
 @mixin box-shadow($horizontal, $vertical, $blur, $spread, $alpha) {
 	-webkit-box-shadow: $horizontal $vertical $blur $spread rgba(0,0,0,$alpha);
 	-moz-box-shadow: $horizontal $vertical $blur $spread rgba(0,0,0,$alpha);

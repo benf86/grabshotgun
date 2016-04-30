@@ -1,48 +1,24 @@
-@import '../../../shared/templates/styles/mixins';
-@import 'rolePickMaximized';
-@import 'rolePickMinimized';
+@import 'rolePickMax';
+@import 'rolePickMin';
+
 
 .role-card {
-	@include box-sizing();
-	position: relative;
-	background-color: white;
-	overflow: hidden;
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 50%;
+    @extend %card;
+    
 }
 
-
-
-.role-card-minimized:hover {
-	@include box-shadow(0px, 5px, 24px, 12px, 0.8);
-	@include transform-custom(
-    	(
-			scale(1.10),
-			translateY(0%)
-    	)
-    );
-    z-index: 1;
+.role-card:hover {
+    @extend %card-hover;
 }
 
 .role-text {
-	flex-grow: 1;
-	flex-basis: 30%;
-	font: 2em normal, sans-serif;
-	text-align: center;
+    @extend %card-text;
 }
 
 .role-photo {
-	margin: 0 auto;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	@include transition-custom(
-		(height 500ms ease-in-out,
-		width 500ms ease-in-out,
-		opacity 500ms ease-in-out,
-		flex-basis 500ms ease-in-out
-		)
-	)
+    @extend %card-photo;
+}
+
+.active {
+    background: red;
 }

@@ -1,10 +1,10 @@
-<div id="role-choice" class="role-choice-maximized">
-	<div id="driver" (click)="toggleMaximized('driver')" class="role-card driver-{{driver.cardState}}">
-		<div id="driver-text" class="driver-text-{{driver.cardState}}">Want some company?</div>
-		<div id="driver-photo" class="driver-photo-{{driver.cardState}}"></div>
+<div id="role-choice" class="role-choice-{{rolePicker}}">
+	<div id="driver" (click)="pickRole('driver')" class="role-card driver-{{rolePicker}}">
+		<div id="driver-text" class="driver-text-{{rolePicker}}">Want some company?</div>
+		<div id="driver-photo" class="driver-photo-{{rolePicker}}"></div>
 	</div>
-	<div id="shotgun" (click)="toggleMaximized('shotgun')" class="role-card shotgun-{{shotgun.cardState}}">
-		<div id="shotgun-text" class="shotgun-text-{{shotgun.cardState}}">Ride shotgun</div>
-		<div id="shotgun-photo" class="shotgun-photo-{{shotgun.cardState}}"></div>
+	<div id="shotgun" (click)="pickRole('shotgun')" class="role-card shotgun-{{rolePicker}}">
+		<div id="shotgun-text" class="shotgun-text-{{rolePicker}}">Ride shotgun</div>
+		<div id="shotgun-photo" class="shotgun-photo-{{rolePicker}}"></div>
 	</div>
 </div>

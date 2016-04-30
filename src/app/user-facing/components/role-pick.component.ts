@@ -1,5 +1,4 @@
 import { Component } from 'angular2/core';
-import { NgClass } from 'angular2/common';
 
 
 @Component({
@@ -7,15 +6,14 @@ import { NgClass } from 'angular2/common';
 	templateUrl: '../app/user-facing/templates/html/role-pick.component.html'
 })
 export class RolePick {
-	driver = {
-		cardState: 'maximized'
+	choices = {
+		role: null
 	};
-	shotgun = {
-		cardState: 'maximized'
-	};
-
-	toggleMaximized (cardName: string) {
-		console.log(this[cardName].cardState);
-		this[cardName].cardState = this[cardName].cardState === 'maximized' ? 'minimized' : 'maximized';
+	rolePicker = 'maximized';
+	
+	pickRole (cardName: string) {
+		this.rolePicker = this.rolePicker === 'maximized' ? 'minimized' : 'maximized';
+		this.choices.role = cardName;
+		console.log('You\'re currently ', this.choices.role);
 	}
 }
