@@ -1,6 +1,6 @@
-<div id="role-choice" [ngClass]="{'role-choice-maximized': !role, 'role-choice-minimized': role}">
+<div id="role-container" [ngClass]="{'container-maximized': !role, 'container-minimized': role}">
 	<div id="driver"
-		(click)="pickRole($event)"
+		(click)="setRole($event)"
 		[ngClass]="{
 			'role-card-maximized': !role,
 			'role-card-minimized': role,
@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div id="shotgun"
-		(click)="pickRole($event)"
+		(click)="setRole($event)"
 		[ngClass]="{
 			'role-card-maximized': !role,
 			'role-card-minimized': role,

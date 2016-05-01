@@ -5,16 +5,16 @@ import { RideOptionsService } from '../services/ride-options.service';
 
 
 @Component({
-	selector: 'role-pick',
-	templateUrl: '/app/user-facing/templates/html/role-pick.component.html',
+	selector: 'my-role',
+	templateUrl: '/app/user-facing/templates/html/role.component.html',
 	directives: [NgClass]
 })
-export class RolePick {
+export class RoleComponent {
 	constructor (private _rideOptionsService: RideOptionsService ) {};
 
 	role: string;
 
-	pickRole (event) {
+	setRole (event) {
 		if (this._rideOptionsService.get('role')) {
 			return this.role = this._rideOptionsService.set('role', null).role;
 		}
