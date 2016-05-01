@@ -2,8 +2,10 @@
   "name": "grabshotgun-front",
   "version": "0.0.1",
   "scripts": {
-    "start": "npm run build:link && npm run build:htmlDirs && concurrently \"npm run scss:w\" \"npm run tsc:w\" \"npm run watch:index.html\" \"npm run watch:static\" \"npm run lite\" \"npm run watch:templates:shared\" \"npm run watch:templates:user-facing\"",
-    
+    "start": "npm run build:link && npm run build:htmlDirs && concurrently \"npm run tsc:w\" \"npm run scss:w\" \"npm run watch:index.html\" \"npm run watch:static\" \"npm run lite\" \"npm run watch:templates:shared\" \"npm run watch:templates:user-facing\"",
+
+    "watch:design": "concurrently \"npm run scss:w\" \"npm run watch:index.html\" \"npm run watch:static\" \"npm run lite\" \"npm run watch:templates:shared\" \"npm run watch:templates:user-facing\"",
+
     "start:css": "concurrently \"npm run scss:w\" \"npm run lite\"",
     "tsc": "tsc",
     "lite": "lite-server -c ./bs-config.json",
