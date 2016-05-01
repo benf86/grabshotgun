@@ -1,11 +1,11 @@
-import { RolePick } from '../../../user-facing/components/role-pick.component';
+import { OptionsSelector } from '../../../user-facing/components/options-selector.component';
 
 
 export var routes = [
 	{
 		path: '/',
-		name: 'RolePick',
-		component: RolePick,
+		name: 'OptionsSelector',
+		component: OptionsSelector,
 		useAsDefault: true
 	}
 ]
