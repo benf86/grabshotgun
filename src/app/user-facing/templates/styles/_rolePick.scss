@@ -4,7 +4,6 @@
 
 .role-card {
     @extend %card;
-    
 }
 
 .role-card:hover {
@@ -17,8 +16,4 @@
 
 .role-photo {
     @extend %card-photo;
-}
-
-.active {
-    background: red;
 }

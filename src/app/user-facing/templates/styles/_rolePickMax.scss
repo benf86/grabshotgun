@@ -1,6 +1,6 @@
 .role-choice-maximized {
     @include box-sizing();
-    display: flex;  
+    display: flex;
     justify-content: center;
     align-content: center;
     margin: 0 auto;
@@ -28,7 +28,7 @@
         width: 90vw;
         height: 100vh;
     }
-    
+
     .role-card-maximized {
         @include vertical-align(50%, relative);
     }

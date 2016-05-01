@@ -1,6 +1,6 @@
 .role-choice-minimized {
     @include box-sizing();
-    display: flex;  
+    display: flex;
     justify-content: center;
     align-content: center;
     margin: 0 auto;
@@ -14,9 +14,15 @@
 }
 
 .role-card-minimized:hover {
-    height: 2.75em;
-    width: 90.9vw;
+    @extend .role-card-minimized;
+}
 
+.role-card-minimized.active {
+}
+
+.role-card-minimized.inactive {
+   width: 0vw;
+   height: 0vh;
 }
 
 

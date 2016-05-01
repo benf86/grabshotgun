@@ -4,7 +4,8 @@
 		[ngClass]="{
 			'role-card-maximized': !role,
 			'role-card-minimized': role,
-			active: role === 'driver'
+			active: role === 'driver',
+			inactive: role !== 'driver'
 	}">
 		<div id="driver-text"
 			[ngClass]="{
@@ -23,7 +24,8 @@
 		[ngClass]="{
 			'role-card-maximized': !role,
 			'role-card-minimized': role,
-			active: role === 'shotgun'
+			active: role === 'shotgun',
+			inactive: role !== 'shotgun'
 		}">
 		<div id="shotgun-text"
 			[ngClass]="{
@@ -33,7 +35,8 @@
 		<div id="shotgun-photo"
 			[ngClass]="{
 				'shotgun-photo-maximized': !role,
-				'shotgun-photo-minimized': role}">
+				'shotgun-photo-minimized': role
+		}">
 		</div>
 	</div>
 </div>
