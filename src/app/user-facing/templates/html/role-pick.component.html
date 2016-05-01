@@ -1,10 +1,39 @@
-<div id="role-choice" class="role-choice-{{rolePicker}}">
-	<div id="driver" (click)="pickRole('driver')" class="role-card driver-{{rolePicker}}">
-		<div id="driver-text" class="driver-text-{{rolePicker}}">Want some company?</div>
-		<div id="driver-photo" class="driver-photo-{{rolePicker}}"></div>
+<div id="role-choice" [ngClass]="{'role-choice-maximized': !role, 'role-choice-minimized': role}">
+	<div id="driver"
+		(click)="pickRole($event)"
+		[ngClass]="{
+			'role-card-maximized': !role,
+			'role-card-minimized': role,
+			active: role === 'driver'
+	}">
+		<div id="driver-text"
+			[ngClass]="{
+				'driver-text-maximized': !role,
+				'driver-text-minimized': role
+			}">Want some company?
+		</div>
+		<div id="driver-photo"
+			[ngClass]="{
+				'driver-photo-maximized': !role,
+				'driver-photo-minimized': role}">
+		</div>
 	</div>
-	<div id="shotgun" (click)="pickRole('shotgun')" class="role-card shotgun-{{rolePicker}}">
-		<div id="shotgun-text" class="shotgun-text-{{rolePicker}}">Ride shotgun</div>
-		<div id="shotgun-photo" class="shotgun-photo-{{rolePicker}}"></div>
+	<div id="shotgun"
+		(click)="pickRole($event)"
+		[ngClass]="{
+			'role-card-maximized': !role,
+			'role-card-minimized': role,
+			active: role === 'shotgun'
+		}">
+		<div id="shotgun-text"
+			[ngClass]="{
+				'shotgun-text-maximized': !role,
+				'shotgun-text-minimized': role
+		}">Ride shotgun</div>
+		<div id="shotgun-photo"
+			[ngClass]="{
+				'shotgun-photo-maximized': !role,
+				'shotgun-photo-minimized': role}">
+		</div>
 	</div>
 </div>
