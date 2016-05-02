@@ -1,4 +1,6 @@
 @import 'role';
+@import 'destination';
+
 
 #options-selector {
 	position: fixed;
@@ -12,4 +14,122 @@
 	display: flex;
 	flex-direction: column;
 	flex-wrap: none;
+}
+
+.container {
+	@include box-sizing();
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+	@include transition-custom(
+        (
+            height 300ms ease-in-out,
+            width 300ms ease-in-out,
+            max-height 300ms ease-in-out,
+            max-width 300ms ease-in-out,
+            min-height 300ms ease-in-out,
+            min-width 300ms ease-in-out,
+            top 300ms ease-in-out,
+            bottom 300ms ease-in-out,
+            left 300ms ease-in-out,
+            right 300ms ease-in-out,
+        )
+    );
+}
+
+.container-maximized {
+    @extend .container;
+}
+
+.active-card {
+
+}
+
+.inactive-card {
+	width: 0vw;
+    height: 0vh;
+}
+
+.card-minimized {
+	height: 2.75em;
+    width: 90.9vw;
+    top: 0%;
+}
+
+.card-text-minimized {
+    font-size: 1.5em;
+}
+
+.card-photo-minimized {
+	width: 0%;
+    height: 0%;
+    flex-basis: 0%;
+    opacity: 0;
+}
+
+@media screen and (min-width: 600px) {
+    .container-maximized {
+        flex-direction: row;
+        flex-wrap: no-wrap;
+        width: 90vw;
+        height: 100vh;
+    }
+
+    .container-minimized {
+        flex-direction: row;
+        flex-wrap: no-wrap;
+        width: 100vw;
+        height: 2.75em;
+        @include transition-custom(
+            (
+                height 300ms ease-in-out,
+                width 300ms ease-in-out,
+                max-height 300ms ease-in-out,
+                max-width 300ms ease-in-out,
+                min-height 300ms ease-in-out,
+                min-width 300ms ease-in-out,
+                top 300ms ease-in-out,
+                bottom 300ms ease-in-out,
+                left 300ms ease-in-out,
+                right 300ms ease-in-out,
+            )
+        );
+    }
+
+    .card-maximized {
+    	@include vertical-align(50%, relative);
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .container-maximized {
+        @include box-sizing();
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .card-maximized {
+        position: relative;
+        top: 0px;
+        width: 80%;
+        max-height: 10em;
+        max-width: 30em;
+        margin: 10px auto;
+    }
+
+    .container-minimized {
+        @include box-sizing();
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .card-minimized {
+        position: relative;
+        top: 0px;
+        width: 80%;
+        max-height: 10em;
+        max-width: 30em;
+        margin: 10px auto;
+    }
 }

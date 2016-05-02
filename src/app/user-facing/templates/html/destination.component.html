@@ -1,3 +1,22 @@
 <div id="destination-container" class="container-maximized">
-	<div id="destination" class="role-card-maximized"></div>
+	<div id="destination"
+		[ngClass]="{
+			'destination-card-maximized': !destination,
+			'destination-card-minimized': destination
+	}">
+		<div id="destination-text"
+			[ngClass]="{
+				'destination-text-maximized': !destination,
+				'destination-text-minimized': destination
+		}">
+			<p>Where would you like to go?</p>
+			<input type="text" placeholder="Enter your destination">
+		</div>
+		<div id="destination-photo"
+			[ngClass]="{
+				'destination-photo-maximized': !destination,
+				'destination-photo-minimized': destination
+		}">
+		</div>
+	</div>
 </div>

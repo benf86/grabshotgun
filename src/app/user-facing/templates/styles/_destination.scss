@@ -1,0 +1,19 @@
+@import 'destinationMax';
+@import 'destinationMin';
+
+
+.destination-card {
+    @extend %card;
+}
+
+.destination-card:hover {
+    @extend %card-hover;
+}
+
+.destination-text {
+    @extend %card-text;
+}
+
+.destination-photo {
+    @extend %card-photo;
+}

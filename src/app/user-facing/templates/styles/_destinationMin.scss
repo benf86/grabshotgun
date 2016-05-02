@@ -1,0 +1,33 @@
+.container-minimized {
+    @extend .container;
+}
+
+.destination-card-minimized {
+    @extend .card-minimized;
+    @extend .destination-card;
+}
+
+.destination-card-minimized:hover {
+    @extend .destination-card-minimized;
+}
+
+.destination-card-minimized.active {
+}
+
+.destination-card-minimized.inactive {
+    @extend .inactive-card;
+}
+
+.destination-text-minimized {
+    @extend .destination-text;
+    @extend .card-text-minimized;
+}
+
+.destination-text-minimized:before {
+	content: 'to ';
+}
+
+.destination-photo-minimized {
+    @extend .destination-photo;
+    @extend .card-photo-minimized;
+}

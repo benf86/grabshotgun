@@ -1,0 +1,45 @@
+.destination-card-maximized {
+    @extend .destination-card;
+    @extend .card-maximized;
+    flex-basis: 50%;
+}
+
+.destination-card-maximized:hover {
+    @include transform-custom(
+        (
+            scale(1.10),
+            translateY(-45%)
+        )
+    );
+}
+
+.destination-card-maximized input {
+	-webkit-appearance: none;
+	position: relative;
+	top: 20px;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	width: 80%;
+	font-size: 0.8em;
+}
+
+.destination-card-maximized input:focus {
+	outline: none;
+}
+
+.destination-photo-maximized {
+    @extend .destination-photo;
+    display: none;
+}
+
+.destination-text-maximized {
+    @extend .destination-text;
+}
+
+.destination-photo-maximized {
+    @extend .destination-photo-maximized;
+}
+
+.destination-text-maximized {
+    @extend .destination-text-maximized;
+}
