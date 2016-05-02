@@ -21,9 +21,14 @@
 .destination-text-minimized {
     @extend .destination-text;
     @extend .card-text-minimized;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.destination-text-minimized:before {
+.destination-text-answer:before {
+    @extend .minimized-before;
 	content: 'to ';
 }
 

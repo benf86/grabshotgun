@@ -30,6 +30,7 @@
 }
 
 .role-text-minimized:before {
+    @extend .minimized-before;
     content: 'I will ';
 }
 

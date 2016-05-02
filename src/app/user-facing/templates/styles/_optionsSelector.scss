@@ -133,3 +133,14 @@
         margin: 10px auto;
     }
 }
+
+.hidden-element {
+	width: 0vw;
+    height: 0vh;
+    overflow: hidden;
+}
+
+.minimized-before {
+	font-style: italic;
+    font-size: 0.9em;
+}
