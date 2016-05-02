@@ -28,6 +28,9 @@ export class RideOptionsService {
 	}
 
 	get (property: string): any {
-		return this.options.role;
+		if (property) {
+			return this.options[property];
+		}
+		return this.options;
 	}
 }

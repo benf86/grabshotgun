@@ -1,4 +1,9 @@
-<div id="destination-container" class="container-maximized">
+<div id="destination-container"
+	(click)="setDestination($event)"
+	[ngClass]="{
+		'container-maximized': !destination,
+		'container-minimized': destination
+	}">
 	<div id="destination"
 		[ngClass]="{
 			'destination-card-maximized': !destination,
@@ -9,8 +14,20 @@
 				'destination-text-maximized': !destination,
 				'destination-text-minimized': destination
 		}">
-			<p>Where would you like to go?</p>
-			<input type="text" placeholder="Enter your destination">
+			<div class="destination-text-question"
+				[ngClass]="{
+					'hidden-element': destination
+			}">
+				<p>Where would you like to go?</p>
+				<input type="text" placeholder="Enter your destination" [(ngModel)]="tempDestination">
+				<button id="submit-destination-btn" class="check-mark" (click)="setDestination($event)">✓</button>
+			</div>
+			<div class="destination-text-answer"
+				[ngClass]="{
+					'hidden-element': !destination
+			}">
+				{{destination}}
+			</div>
 		</div>
 		<div id="destination-photo"
 			[ngClass]="{
