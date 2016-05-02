@@ -1,6 +1,6 @@
 import { Injectable } from 'angular2/core';
 
-interface RideOptions {
+interface RideOptionsInterface {
 	role?: string;
 	origin?: string;
 	originGPS?: string;
@@ -12,7 +12,7 @@ interface RideOptions {
 
 @Injectable()
 export class RideOptionsService {
-	options: RideOptions = {
+	options: RideOptionsInterface = {
 		role: null,
 		origin: null,
 		originGPS: null,
@@ -22,7 +22,7 @@ export class RideOptionsService {
 		cost: null
 	}
 
-	set (property: string, role: string): RideOptions {
+	set (property: string, role: string): RideOptionsInterface {
 		this.options[property] = role;
 		return this.options;
 	}
@@ -32,5 +32,13 @@ export class RideOptionsService {
 			return this.options[property];
 		}
 		return this.options;
+	}
+
+	toJSON (): string {
+		return JSON.stringify(this.options);
+	}
+
+	fromJSON (rideOptionsJSON: string): RideOptionsInterface {
+		return JSON.parse(rideOptionsJSON);
 	}
 }

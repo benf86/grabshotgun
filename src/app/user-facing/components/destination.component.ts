@@ -19,7 +19,7 @@ export class DestinationComponent {
 		if (event.srcElement.id === 'submit-destination-btn' ||
 			(event.srcElement.id === 'destination-input' && event.which === 13)) {
 			event.stopPropagation();
-			return console.log(this.destination = this._rideOptionsService.set('destination', this.tempDestination).destination);
+			return this.destination = this._rideOptionsService.set('destination', this.tempDestination).destination;
 		}
 		return this.destination = this._rideOptionsService.set('destination', null).destination;
 	}
