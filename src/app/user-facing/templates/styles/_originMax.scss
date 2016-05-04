@@ -1,0 +1,65 @@
+  .origin-card-maximized {
+    @extend .origin-card;
+    @extend .card-maximized;
+    flex-basis: 50%;
+}
+
+.origin-card-maximized:hover {
+    @include transform-custom(
+        (
+            scale(1.10),
+            translateY(-45%)
+        )
+    );
+}
+
+.origin-card-maximized input {
+	-webkit-appearance: none;
+	position: relative;
+	top: 0.7em;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	width: 80%;
+	font-size: 0.8em;
+}
+
+.origin-card-maximized input:focus {
+	outline: none;
+}
+
+.origin-card-maximized #submit-origin-btn {
+    position: relative;
+    top: 0.7em;
+    border: none;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    background: none;
+    height: 2em;
+    width: 2em;
+    @include box-shadow(1px, 1px, 0px, 0px, 1);
+}
+
+.origin-card-maximized #submit-origin-btn:hover {
+    @include box-shadow(2px, 2px, 1px, 1px, 0.9);
+    @include transform-custom(
+        (
+            scale(1.10)
+        )
+    )
+}
+
+.origin-card-maximized #submit-origin-btn:focus {
+    @include box-shadow(1px, 1px, 0px, 0px, 0);
+    border: none;
+    outline: none;
+}
+
+
+.origin-text-maximized {
+    @extend .origin-text;
+}
+
+.origin-photo-maximized {
+    @extend .origin-photo;
+    display: none;
+}

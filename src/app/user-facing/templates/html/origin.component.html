@@ -1,0 +1,44 @@
+<div id="origin-container"
+	(click)="setOrigin($event)"
+	[ngClass]="{
+		'container-maximized': !origin,
+		'container-minimized': origin
+	}">
+	<div id="origin"
+		[ngClass]="{
+			'origin-card-maximized': !origin,
+			'origin-card-minimized': origin
+	}">
+		<div id="origin-text"
+			[ngClass]="{
+				'origin-text-maximized': !origin,
+				'origin-text-minimized': origin
+		}">
+			<div class="origin-text-question"
+				[ngClass]="{
+					'hidden-element': origin
+			}">
+				<p>Origin:</p>
+				<input type="text" id="origin-input" placeholder="Where to?"
+					[(ngModel)]="tempOrigin"
+					(keypress)="setOrigin($event, destination_input)"
+				>
+				<button id="submit-origin-btn" class="check-mark"
+					(click)="setOrigin($event)"
+				>✓</button>
+			</div>
+			<div class="origin-text-answer"
+				[ngClass]="{
+					'hidden-element': !origin
+			}">
+				{{origin}}
+			</div>
+		</div>
+		<div id="origin-photo"
+			[ngClass]="{
+				'origin-photo-maximized': !origin,
+				'origin-photo-minimized': origin
+		}">
+		</div>
+	</div>
+</div>

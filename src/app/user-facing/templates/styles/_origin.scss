@@ -1,0 +1,19 @@
+@import 'originMax';
+@import 'originMin';
+
+
+.origin-card {
+    @extend %card;
+}
+
+.origin-card:hover {
+    @extend %card-hover;
+}
+
+.origin-text {
+    @extend %card-text;
+}
+
+.origin-photo {
+    @extend %card-photo;
+}

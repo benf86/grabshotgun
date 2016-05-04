@@ -1,0 +1,38 @@
+.container-minimized {
+    @extend .container;
+}
+
+.origin-card-minimized {
+    @extend .card-minimized;
+    @extend .origin-card;
+}
+
+.origin-card-minimized:hover {
+    @extend .origin-card-minimized;
+}
+
+.origin-card-minimized.active {
+}
+
+.origin-card-minimized.inactive {
+    @extend .inactive-card;
+}
+
+.origin-text-minimized {
+    @extend .origin-text;
+    @extend .card-text-minimized;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.origin-text-answer:before {
+    @extend .minimized-before;
+	content: 'from ';
+}
+
+.origin-photo-minimized {
+    @extend .origin-photo;
+    @extend .card-photo-minimized;
+}
