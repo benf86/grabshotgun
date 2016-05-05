@@ -1,6 +1,7 @@
 import { Component } from 'angular2/core';
 import { NgClass } from 'angular2/common';
 
+import { BaseComponent } from '../util/base.component.extendable';
 import { RideOptionsService } from '../services/ride-options.service';
 
 
@@ -9,10 +10,11 @@ import { RideOptionsService } from '../services/ride-options.service';
 	templateUrl: '/app/user-facing/templates/html/role.component.html',
 	directives: [NgClass]
 })
-export class RoleComponent {
+export class RoleComponent extends BaseComponent {
 	constructor (private _rideOptionsService: RideOptionsService ) {};
 
 	role: string;
+	isHovered: any = false;
 
 	setRole (event) {
 		if (this._rideOptionsService.get('role')) {

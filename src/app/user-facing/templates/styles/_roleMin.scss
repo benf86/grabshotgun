@@ -7,8 +7,9 @@
     @extend .role-card;
 }
 
-.role-card-minimized:hover {
+.role-card-minimized.custom-hover {
     @extend .role-card-minimized;
+    @extend .custom-hover-minimized;
 }
 
 .role-card-minimized.active {
@@ -39,7 +40,7 @@
     @include transform-origin(top);
 }
 
-.shotgun-minimized:hover {
+.shotgun-minimized.custom-hover {
     @include transform-origin(top);
 }
 
@@ -57,7 +58,7 @@
     @include transform-origin(top);
 }
 
-.driver-minimized:hover {
+.driver-minimized.custom-hover {
     @include transform-origin(top);
 }
 

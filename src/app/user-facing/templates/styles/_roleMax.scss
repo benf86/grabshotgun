@@ -4,7 +4,7 @@
     flex-basis: 50%;
 }
 
-.role-card-maximized:hover {
+.role-card-maximized.custom-hover {
     @include transform-custom(
         (
             scale(1.10),
@@ -26,7 +26,7 @@
     right: 0;
 }
 
-.shotgun-maximized:hover {
+.shotgun-maximized.custom-hover {
     right: 20px;
 }
 
@@ -45,7 +45,7 @@
     left: 0;
 }
 
-.driver-maximized:hover {
+.driver-maximized.custom-hover {
     left: 20px;
 }
 .driver-photo-maximized {

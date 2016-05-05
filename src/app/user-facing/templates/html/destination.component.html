@@ -5,15 +5,18 @@
 		'container-minimized': destination
 	}">
 	<div id="destination"
+		(mouseenter)="setHover(true)"
+		(mouseleave)="setHover(false)"
 		[ngClass]="{
 			'destination-card-maximized': !destination,
-			'destination-card-minimized': destination
+			'destination-card-minimized': destination,
+			'custom-hover': isHovered
 	}">
 		<div id="destination-text"
 			[ngClass]="{
 				'destination-text-maximized': !destination,
 				'destination-text-minimized': destination
-		}">
+		}">{{hovered}}
 			<div class="destination-text-question"
 				[ngClass]="{
 					'hidden-element': destination

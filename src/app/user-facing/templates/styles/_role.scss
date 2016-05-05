@@ -6,10 +6,6 @@
     @extend %card;
 }
 
-.role-card:hover {
-    @extend %card-hover;
-}
-
 .role-text {
     @extend %card-text;
 }

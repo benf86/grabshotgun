@@ -7,7 +7,7 @@
     @extend .origin-card;
 }
 
-.origin-card-minimized:hover {
+.origin-card-minimized.custom-hover {
     @extend .origin-card-minimized;
 }
 

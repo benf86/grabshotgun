@@ -1,6 +1,7 @@
 import { Component } from 'angular2/core';
 import { NgClass } from 'angular2/common';
 
+import { BaseComponent } from '../util/base.component.extendable';
 import { RideOptionsService } from '../services/ride-options.service';
 
 
@@ -9,11 +10,12 @@ import { RideOptionsService } from '../services/ride-options.service';
 	templateUrl: '/app/user-facing/templates/html/destination.component.html',
 	directives: [NgClass]
 })
-export class DestinationComponent {
+export class DestinationComponent extends BaseComponent {
 	constructor (private _rideOptionsService: RideOptionsService) {};
 
 	tempDestination: string;
 	destination: string;
+	isHovered: boolean = false;
 
 	setDestination (event) {
 		if (event.srcElement.id === 'submit-destination-btn' ||
@@ -21,6 +23,7 @@ export class DestinationComponent {
 			event.stopPropagation();
 			return this.destination = this._rideOptionsService.set('destination', this.tempDestination).destination;
 		}
+		this.isHovered = false;
 		return this.destination = this._rideOptionsService.set('destination', null).destination;
 	}
 }

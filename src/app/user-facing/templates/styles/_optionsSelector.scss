@@ -58,6 +58,15 @@
     top: 0%;
 }
 
+.custom-hover {
+    @extend %card-hover;
+}
+
+.custom-hover-minimized {
+    @extend .custom-hover;
+    @include transform-origin(top);
+}
+
 .card-text-minimized {
     font-size: 1.5em;
 }

@@ -6,10 +6,6 @@
     @extend %card;
 }
 
-.origin-card:hover {
-    @extend %card-hover;
-}
-
 .origin-text {
     @extend %card-text;
 }

@@ -7,7 +7,7 @@
     @extend .destination-card;
 }
 
-.destination-card-minimized:hover {
+.destination-card-minimized.custom-hover {
     @extend .destination-card-minimized;
 }
 

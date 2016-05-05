@@ -4,7 +4,7 @@
     flex-basis: 50%;
 }
 
-.origin-card-maximized:hover {
+.origin-card-maximized.custom-hover {
     @include transform-custom(
         (
             scale(1.10),

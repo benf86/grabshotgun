@@ -5,9 +5,12 @@
 		'container-minimized': origin
 	}">
 	<div id="origin"
+		(mouseenter)="setHover(true, 'origin true')"
+		(mouseleave)="setHover(false, 'origin false')"
 		[ngClass]="{
 			'origin-card-maximized': !origin,
-			'origin-card-minimized': origin
+			'origin-card-minimized': origin,
+			'custom-hover': isHovered
 	}">
 		<div id="origin-text"
 			[ngClass]="{

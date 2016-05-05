@@ -6,10 +6,6 @@
     @extend %card;
 }
 
-.destination-card:hover {
-    @extend %card-hover;
-}
-
 .destination-text {
     @extend %card-text;
 }
